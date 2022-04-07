@@ -1,0 +1,32 @@
+.lista{
+    ul{
+        margin-left: 1rem;
+        padding-top:0.5rem;
+        padding-bottom:0.5rem;
+    }
+    ul, li{
+        display: flex;
+    }
+    li{
+        padding:0.2rem;
+        color:#4b566a;
+        margin:0;
+    }
+    li:hover{
+        cursor: pointer
+    }
+    .linha{
+        border-left: 2px solid #5e6c86;
+        width: 1px;
+        height:0.8rem;
+        margin-left:0.7rem;
+        margin-right:0.7rem;
+    }
+    a{
+        text-decoration: none;
+        color:#4b566a;
+    }
+    a:hover{
+        color: #1c283f;
+    }
+}
