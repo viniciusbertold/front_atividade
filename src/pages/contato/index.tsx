@@ -4,7 +4,7 @@ import {FaPhone} from 'react-icons/fa';
 import Modal from 'react-modal';
 import { useState } from 'react';
 import styles from './styles.module.scss';
-export default function contato(){
+export default function Contato(){
     const [ModalIsOpen, SetIsOpen] = useState<boolean>(false)
     function useOpenModal(){
         SetIsOpen(true);
