@@ -5,26 +5,26 @@ import Modal from 'react-modal';
 import { useState } from 'react';
 import styles from './styles.module.scss';
 export default function contato(){
-    const [modalIsOpen, setIsOpen] = useState<boolean>(false)
-    function openModal(){
-        setIsOpen(true);
+    const [ModalIsOpen, SetIsOpen] = useState<boolean>(false)
+    function useOpenModal(){
+        SetIsOpen(true);
     }
 
-    function closeModal(){
-        setIsOpen(false);
+    function useCloseModal(){
+        SetIsOpen(false);
     }
 
-    const handleOpen = (e) =>{
+    const HandleOpen = (e) =>{
         e.preventDefault()
-        openModal()
+        useOpenModal()
     }
-    const handleClose = (e) =>{
-        closeModal()
+    const HandleClose = (e) =>{
+        useCloseModal()
     }
     return (
         <>
         <Modal
-        isOpen={modalIsOpen}
+        isOpen={ModalIsOpen}
         className={styles.modal}
         >
             <div className={styles.modalContainer}>
@@ -32,7 +32,7 @@ export default function contato(){
                 <input type='email' /><br></br><br></br>
                 <label>PROPOSTA: </label><br></br>
                 <input type='text' /><br></br><br></br>
-                <button onClick={e => handleClose(e)}>Enviar proposta</button>
+                <button onClick={e => HandleClose(e)}>Enviar proposta</button>
             </div>
             
         </Modal>
@@ -65,7 +65,7 @@ export default function contato(){
                 <strong>
                     <span><FaMobileAlt/>: (99) 99999 - 9999</span><br></br><br></br>
                     <span><FaPhone/>: (99) 9999 - 9999</span><br></br><br></br>
-                    <button onClick={e => handleOpen(e)}>Contatar</button>
+                    <button onClick={e => HandleOpen(e)}>Contatar</button>
                 </strong>
                 
 
