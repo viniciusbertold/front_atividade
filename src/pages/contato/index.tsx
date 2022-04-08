@@ -1,9 +1,42 @@
 //import Imagem from 'next/image';
-
+import {FaMobileAlt} from 'react-icons/fa';
+import {FaPhone} from 'react-icons/fa';
+import Modal from 'react-modal';
+import { useState } from 'react';
+import styles from './styles.module.scss';
 export default function contato(){
+    const [modalIsOpen, setIsOpen] = useState<boolean>(false)
+    function openModal(){
+        setIsOpen(true);
+    }
+
+    function closeModal(){
+        setIsOpen(false);
+    }
+
+    const handleOpen = (e) =>{
+        e.preventDefault()
+        openModal()
+    }
+    const handleClose = (e) =>{
+        closeModal()
+    }
     return (
         <>
-            <div>
+        <Modal
+        isOpen={modalIsOpen}
+        className={styles.modal}
+        >
+            <div className={styles.modalContainer}>
+                <label>EMAIL: </label><br></br>
+                <input type='email' /><br></br><br></br>
+                <label>PROPOSTA: </label><br></br>
+                <input type='text' /><br></br><br></br>
+                <button onClick={e => handleClose(e)}>Enviar proposta</button>
+            </div>
+            
+        </Modal>
+            <div className={styles.container}>
                 <h2>Contato</h2>
                 <br></br>
                 <p>
@@ -30,8 +63,9 @@ export default function contato(){
                 </p>
                 <br></br>
                 <strong>
-                    <span>Celular: (99) 99999 - 9999</span><br></br><br></br>
-                    <span>Telefone: (99) 9999 - 9999</span>
+                    <span><FaMobileAlt/>: (99) 99999 - 9999</span><br></br><br></br>
+                    <span><FaPhone/>: (99) 9999 - 9999</span><br></br><br></br>
+                    <button onClick={e => handleOpen(e)}>Contatar</button>
                 </strong>
                 
 
